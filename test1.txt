@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-This is the third commit.
-=======
-This is the second commit.
->>>>>>> 34949b99fc41215531d11cc3de5e70080bc87a5b
+A is an alphabet.
