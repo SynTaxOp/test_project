@@ -1,0 +1,85 @@
+mkdir project1
+mkdir project2
+cd project1
+git init
+touch Ini_file.txt
+git add .
+git commit -m "File project1 created."
+git branch staging
+git checkout staging
+touch test1.txt
+start test1.txt
+git add .
+git commit -m "Added test1 file"
+git remote add origin https://github.com/SynTaxOp/test_project.git
+git push --set-upstream origin staging
+git checkout master
+git push --set-upstream origin master
+
+cd ..
+cd project2
+git clone https://github.com/SynTaxOp/test_project.git
+cd test_project/
+git checkout staging
+start test1.txt
+git add .
+git commit -m "test1 file modified."
+git push
+
+cd ..
+cd project1
+git checkout staging
+start test1.txt
+git add .
+git commit -m "test1 file modified in third commit."
+
+Updates were rejected because the remote contains work that you do
+not have locally. This is usually caused by another repository pushing       
+to the same ref. You may want to first integrate the remote changes
+(e.g., 'git pull ...') before pushing again.
+We should sync the local repo with latest changes of remote repo and after that we can push changes into it. 
+
+git pull
+git add .
+git commit -m "Fixing conflict."
+git push
+git checkout master
+git merge staging
+
+git branch testing
+start test1.txt
+git add .
+git commit -m "Change 1"
+git add .
+git commit -m "Change 2"
+git add .
+git commit -m "Change 3"
+git add .
+git commit -m "Change 4"
+
+git push --set-upstream origin testing
+git checkout master
+start test1.txt
+git add .
+git commit -m "Change 1"
+git add .
+git commit -m "Change 2"
+git add .
+git commit -m "Change 3"
+git add .
+git commit -m "Change 4"
+
+git push
+git rebase testing
+cd ..
+cd project2
+cd test_project/
+git fetch
+git checkout testing
+git log
+git checkout master
+git merge testing
+
+Difference : test1 file is not present in the master branch of project2.
+
+
